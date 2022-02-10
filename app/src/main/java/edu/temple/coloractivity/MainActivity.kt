@@ -12,14 +12,15 @@ class MainActivity : AppCompatActivity() {
 
         val colors = arrayOf(
             ColorObject("Red", "#FF0000"),
-            ColorObject("Green", "#FF0000"),
-            ColorObject("Blue", "#FF0000"),
-            ColorObject("Red", "#FF0000"),
-            ColorObject("Red", "#FF0000"),
-            ColorObject("Red", "#FF0000")
+            ColorObject("Green", "#00FF00"),
+            ColorObject("Blue", "#0000FF"),
+            ColorObject("Gray", "#555555"),
+            ColorObject("Orange", "#FFA500"),
+            ColorObject("Pink", "#33FFFF")
         )
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-        recyclerView.layoutManager = GridLayoutManager(this, )
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
+        recyclerView.adapter = ColorAdapter(colors)
     }
 }
