@@ -1,8 +1,9 @@
 package edu.temple.coloractivity
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -20,8 +21,8 @@ class MainActivity : AppCompatActivity() {
             ColorObject("Pink", "#33FFFF")
         )
 
-        val myOnClickFunction : () -> Unit = {
-            Toast.makeText(this, "You clicked a view", Toast.LENGTH_SHORT).show()
+        val myOnClickFunction : (ColorObject) -> Unit = {
+            findViewById<View>(R.id.mainLayout).setBackgroundColor(Color.parseColor(it.code))
         }
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)

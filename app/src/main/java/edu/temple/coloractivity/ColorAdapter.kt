@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView
 
-public class ColorAdapter(_items: Array<ColorObject>, _myfunc: () -> Unit) : RecyclerView.Adapter<ColorAdapter.ColorViewHolder>() {
+public class ColorAdapter(_items: Array<ColorObject>, _myfunc: (ColorObject) -> Unit) : RecyclerView.Adapter<ColorAdapter.ColorObjectViewHolder>() {
 
     val items = _items
     val myOnClickFunc = _myfunc
@@ -15,6 +15,7 @@ public class ColorAdapter(_items: Array<ColorObject>, _myfunc: () -> Unit) : Rec
     inner class ColorObjectViewHolder(_view: View) : RecyclerView.ViewHolder(_view){
         val colorNameTextView = _view.findViewById<TextView>(R.id.colorNameTextView)
         val colorDisplayView = _view.findViewById<View>(R.id.colorDisplayView)
+        lateinit var colorObject : ColorObject
 
         init {
             _view.setOnClickListener{myOnClickFunc()}
@@ -27,7 +28,6 @@ public class ColorAdapter(_items: Array<ColorObject>, _myfunc: () -> Unit) : Rec
     ): ColorAdapter.ColorObjectViewHolder {
         val layout = LayoutInflater.from(parent.context)
             .inflate(R.layout.color_object_layout, parent, false)
-
         val ViewHolder = ColorObjectViewHolder(layout)
         return ViewHolder
     }
@@ -35,6 +35,7 @@ public class ColorAdapter(_items: Array<ColorObject>, _myfunc: () -> Unit) : Rec
     override fun onBindViewHolder(holder: ColorAdapter.ColorObjectViewHolder, position: Int) {
         holder.colorNameTextView.text = items[position].name
         holder.colorDisplayView.setBackgroundColor(Color.parseColor(items[position].code))
+        holder.colorObject = items[position]
     }
 
     override fun getItemCount(): Int {
