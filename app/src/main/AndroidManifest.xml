@@ -11,7 +11,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ColorActivity">
         <activity
-            android:name=".PaletteActivity"
+            android:name=".ColorActivity"
+            android:exported="true"
+            tools:ignore="MissingClass">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CanvasActivity"
             android:exported="true"
             tools:ignore="MissingClass">
             <intent-filter>
