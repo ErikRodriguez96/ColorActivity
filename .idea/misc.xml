@@ -4,8 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17300724637681159" />
+        <entry key="app/src/main/res/layout/activity_palette.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_textview.xml" value="0.17300724637681159" />
         <entry key="app/src/main/res/layout/color_object_layout.xml" value="0.17300724637681159" />
         <entry key="app/src/main/res/layout/color_object_view.xml" value="0.17300724637681159" />
+        <entry key="app/src/main/res/layout/recycler_view_layout.xml" value="0.17300724637681159" />
+        <entry key="app/src/main/res/layout/spinner_color_item.xml" value="0.17300724637681159" />
       </map>
     </option>
   </component>
